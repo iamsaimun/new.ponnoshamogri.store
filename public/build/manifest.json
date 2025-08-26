@@ -1,0 +1,12 @@
+{
+  "resources/front/js/app.js": {
+    "file": "assets/app.3f15f484.js",
+    "src": "resources/front/js/app.js",
+    "isEntry": true
+  },
+  "resources/front/css/app.css": {
+    "file": "assets/app.5ec7258d.css",
+    "src": "resources/front/css/app.css",
+    "isEntry": true
+  }
+}

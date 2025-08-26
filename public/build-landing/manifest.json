@@ -1,0 +1,12 @@
+{
+  "resources/landing/js/app.js": {
+    "file": "assets/app.e5198d1b.js",
+    "src": "resources/landing/js/app.js",
+    "isEntry": true
+  },
+  "resources/landing/css/app.css": {
+    "file": "assets/app.75fb6320.css",
+    "src": "resources/landing/css/app.css",
+    "isEntry": true
+  }
+}
