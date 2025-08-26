@@ -5,6 +5,8 @@
 /storage/*.key
 package-lock.json
 /vendor
+.env.example
+.env
 .env.backup
 .env.production
 .phpunit.result.cache
