@@ -15,7 +15,7 @@ class LandingController extends Controller
     {
         // Use different product IDs based on the environment
         $productIds = env('APP_ENV') === 'production'
-            ? [9587]
+            ? [16998]
             : [22631];
 
         $products_inventory = [];
