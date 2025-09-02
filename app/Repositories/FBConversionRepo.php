@@ -45,7 +45,12 @@ class FBConversionRepo
             }
 
             // dd($request_data);
-            $response = Http::post(('https://graph.facebook.com/v18.0/' . env('PIXEL_ID') . '/events'), [
+            if(env('PIXEL_TEST_CODE')){
+                $test_parameter = '?test_event_code=' . env('PIXEL_TEST_CODE');
+            }else{
+                $test_parameter = '';
+            }
+            $response = Http::post(('https://graph.facebook.com/v18.0/' . env('PIXEL_ID') . '/events' . $test_parameter), [
                 'data' => [$request_data],
                 'access_token' => env('PIXEL_ACCESS_TOKEN'),
             ]);
