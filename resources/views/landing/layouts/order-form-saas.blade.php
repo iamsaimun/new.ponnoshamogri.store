@@ -30,14 +30,14 @@
             <input name="quantity" type="hidden" value="1" id="single_cart_quantity">
             @csrf
             <input type="hidden" name="delivery_charge" class="delivery_charge_inpout shipping_charge" value="0">
-            <input type="hidden" name="products_data" class="products_data" >
+            <input type="hidden" name="products_data" class="products_data">
             @php
-                if(session('uu_id__')){
-                    $uuid = session('uu_id__');
-                }else{
-                    $uuid = \Str::uuid();
-                    session(['uu_id__' => $uuid]);
-                }
+            if(session('uu_id__')){
+            $uuid = session('uu_id__');
+            }else{
+            $uuid = \Str::uuid();
+            session(['uu_id__' => $uuid]);
+            }
             @endphp
             {{-- <input type="hidden" name="uu_id" class="uu_id" value="{{\Str::uuid()}}"> --}}
             <input type="hidden" name="uu_id" class="uu_id" value="{{$uuid}}">
@@ -52,9 +52,9 @@
                         <input placeholder="আপনার নাম লিখুন" class="appearance-none border border-[#048a00] rounded w-full py-3 px-3 text-gray-700 leading-tight focus:shadow-outline shipping_name focus:outline-none information_field @error('name') border-red-500 @enderror" type="text" name="name" value="{{old('name')}}" @if(isset($errors) && count($errors->all())) autofocus @endif required>
 
                         @error('name')
-                            <span class="invalid-feedback block text-red-500" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback block text-red-500" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
 
@@ -63,9 +63,9 @@
                         <input class="appearance-none border border-[#048a00] rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none shipping_mobile_number mobile_number information_field @error('address') border-red-500 @enderror" type="number" name="mobile_number" value="{{old('mobile_number')}}" placeholder="আপনার ১১ ডিজিটের মোবাইল নাম্বারটি লিখুন" required>
 
                         @error('address')
-                            <span class="invalid-feedback block text-red-5" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback block text-red-5" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
 
@@ -74,19 +74,19 @@
                         <input class="appearance-none border border-[#048a00] rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none shipping_address information_field @error('mobile_number') border-red-500 @enderror" type="text" name="address" value="{{old('address')}}" placeholder="ঠিকানা লিখুন" required>
 
                         @error('mobile_number')
-                            <span class="invalid-feedback block text-red-5" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback block text-red-5" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
 
 
-                     <div class="mb-4">
+                    <div class="mb-4">
                         <label class="block text-text_color text-lg mb-2">Shipping </label>
                         <div class="border rounded-md  border-[#048a00]">
                             <div class="area  flex justify-between items-center mr-3  ">
                                 <label class="text-font-color-dark text-sm font-medium  w-full  px-4 py-3 block">
-                                    <input checked type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Inside Dhaka" > <span class="relative left-[-20px]" >ডেলিভারি চার্জ ফ্রি</span>
+                                    <input checked type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Inside Dhaka"> <span class="relative left-[-20px]">ডেলিভারি চার্জ ফ্রি</span>
 
                                 </label>
                                 {{-- <span>0</span> --}}
@@ -94,6 +94,18 @@
 
                         </div>
 
+                    </div>
+                    <div class="mt-6">
+                        <button type="{{env('APP_SMS_STATUS') ? 'button' : 'submit'}}" class="text-center  border-2   text-white bg-[#048a00] rounded-md hind-siliguri-semibold px-6 py-3 text-base font-medium  shadow-sm block w-full place_order_btn {{env('APP_SMS_STATUS') ? 'order_button' : ''}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block">
+                                <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+                            </svg>
+
+                            Place Order ৳ <span class="grand_total">0</span>
+                        </button>
+                        @if(env('APP_SMS_STATUS'))
+                        <p>আপনি অর্ডারটি সাবমিট করলে আপনার মোবাইল নম্বরে ১ টি OTP যাবে এবং OTP টি সাবমিট করতে হবে।</p>
+                        @endif
                     </div>
 
                     {{-- products start --}}
@@ -131,18 +143,7 @@
                         <p class="mt-5">Cash on Delivery</p>
                         <p class="bg-[#eaeaea] text-black px-2 py-2">পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন।</p>
 
-                        <div class="mt-6">
-                            <button type="{{env('APP_SMS_STATUS') ? 'button' : 'submit'}}" class="text-center  border-2   text-white bg-[#048a00] rounded-md hind-siliguri-semibold px-6 py-3 text-base font-medium  shadow-sm block w-full place_order_btn {{env('APP_SMS_STATUS') ? 'order_button' : ''}}">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block">
-                                    <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
-                                </svg>
 
-                                Place Order  ৳ <span class="grand_total">0</span>
-                            </button>
-                            @if(env('APP_SMS_STATUS'))
-                            <p>আপনি অর্ডারটি সাবমিট করলে আপনার মোবাইল  নম্বরে ১ টি OTP যাবে এবং OTP টি সাবমিট করতে হবে।</p>
-                            @endif
-                        </div>
                     </div>
                 </div>
             </div>
