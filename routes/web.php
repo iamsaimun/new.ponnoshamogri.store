@@ -47,4 +47,5 @@ Auth::routes();
 
 // Test Routes
 Route::get('cache-clear',       [TestController::class, 'cacheClear']);
-Route::get('config',            [TestController::class, 'config'])->name('config');
+// Route::get('config',            [TestController::class, 'config'])->name('config');
+Route::get('test',            [TestController::class, 'test'])->name('config');
