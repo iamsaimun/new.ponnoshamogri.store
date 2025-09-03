@@ -69,7 +69,7 @@ class LandingController extends Controller
         $body_data['u_id'] = $request->uu_id;
         $body_data['_fbc'] = request()->cookie('_fbc');
         $body_data['_fbp'] = request()->cookie('_fbp');
-        $body_data['user_ip'] = $request->ip();
+        $body_data['user_ip'] = $request->header('CF-Connecting-IP') ?? $request->ip();
         $body_data['source_web'] = $request->host();
         $body_data['user_agent'] = $request->header('User-Agent');
         $products_data = json_decode($request->products_data);
@@ -125,7 +125,7 @@ class LandingController extends Controller
         $request_data = $request->all();
         $request_data['_fbc'] = request()->cookie('_fbc');
         $request_data['_fbp'] = request()->cookie('_fbp');
-        $request_data['user_ip'] = $request->ip();
+        $request_data['user_ip'] = $request->header('CF-Connecting-IP') ?? $request->ip();
         $request_data['user_agent'] = $request->header('User-Agent');
         $request_data['source_web'] = $request->host();
         $response = Http::post((env('SAAS_API_BASE_PATH') . 'orders/failed-track'), $request_data);
@@ -196,7 +196,7 @@ class LandingController extends Controller
         $missing_order->mobile_number = $request->mobile_number;
         $missing_order->address = $request->address;
         $missing_order->shipping_charge = $request->delivery_charge ?? 0;
-        $missing_order->ip = $request->ip();
+        $missing_order->ip = $request->header('CF-Connecting-IP') ?? $request->ip();
         $missing_order->user_agent = $request->header('User-Agent');
         $missing_order->uid = $request->uu_id;
         $missing_order->save();
