@@ -19,7 +19,7 @@ class TestController extends Controller
 {
     public function test(Request $request)
     {
-        dd(123);
+        dd($request->ip());
     }
 
     public function cacheClear()
