@@ -13,7 +13,7 @@ $products = [];
 $content_ids = [];
 @endphp
 <div class="bg-white pt-10">
-    <div class="container pb-8 md:pb-16">
+    <div class="container pb-8 md:pb-16 bg-[#FF9C00]">
         <h3 class="text-3xl md:text-5xl text-center font-semibold mb-5">Thank you</h3>
         <p class="text-xl md:text-2xl font-semibold text-center md:px-64 text-gray-500 md:mb-7">আলহামদুলিল্লাহ আপনার অর্ডার কনফার্ম করা হয়েছে, <span class="text-[#048a00]">সেইম প্রোডাক্ট অন্য পেজে অর্ডার করা থেকে বিরত থাকুন,</span> আপনার অর্ডারকৃত প্রোডাক্ট খুব দ্রুত ডেলিভারি করা হবে ইনশাআল্লাহ।
         </p>
