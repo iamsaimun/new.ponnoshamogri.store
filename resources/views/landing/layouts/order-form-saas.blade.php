@@ -83,10 +83,10 @@
 
                     <div class="mb-4">
                         <label class="block text-text_color text-lg mb-2">Shipping </label>
-                        <div class="border rounded-md  border-[#048a00]">
+                        <div class="border rounded-md  border-[#048a00] mb-2">
                             <div class="area  flex justify-between items-center mr-3  ">
-                                <label class="text-font-color-dark text-sm font-medium  w-full  px-4 py-3 block">
-                                    <input checked type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Inside Dhaka"> <span class="relative left-[-20px]">Inside Dhaka</span>
+                                <label class="text-font-color-dark text-sm font-medium  w-full  px-4 py-3 block cursor-pointer">
+                                    <input checked type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Inside Dhaka" data-shipping-charge="70"> <span class="relative left-[-20px]">Inside Dhaka</span>
 
                                 </label>
                                 <span>৳70</span>
@@ -95,8 +95,8 @@
                         </div>
                         <div class="border rounded-md  border-[#048a00]">
                             <div class="area  flex justify-between items-center mr-3  ">
-                                <label class="text-font-color-dark text-sm font-medium  w-full  px-4 py-3 block">
-                                    <input type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Outside Dhaka"> <span class="relative left-[-20px]">Outside Dhaka</span>
+                                <label class="text-font-color-dark text-sm font-medium  w-full  px-4 py-3 block cursor-pointer">
+                                    <input type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Outside Dhaka" data-shipping-charge="120"> <span class="relative left-[-20px]">Outside Dhaka</span>
 
                                 </label>
                                 <span>৳120</span>
