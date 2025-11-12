@@ -85,27 +85,18 @@
                         <label class="block text-text_color text-lg mb-2">Shipping </label>
                         <div class="border rounded-md  border-[#048a00] mb-2">
                             <div class="area  flex justify-between items-center mr-3  ">
-                                <label class="text-font-color-dark text-sm font-medium  w-full  px-4 py-3 block cursor-pointer">
-                                    <input checked type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Inside Dhaka" data-shipping-charge="70"> <span class="relative left-[-20px]">Inside Dhaka</span>
+                                <label class="text-font-color-dark text-sm font-medium  w-full  px-4 py-3 block">
+                                    <input checked type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Inside Dhaka"> <span class="relative left-[-20px]">ডেলিভারি চার্জ ফ্রি</span>
 
                                 </label>
-                                <span>৳70</span>
+                                {{-- <span>0</span> --}}
                             </div>
 
-                        </div>
-                        <div class="border rounded-md  border-[#048a00]">
-                            <div class="area  flex justify-between items-center mr-3  ">
-                                <label class="text-font-color-dark text-sm font-medium  w-full  px-4 py-3 block cursor-pointer">
-                                    <input type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Outside Dhaka" data-shipping-charge="120"> <span class="relative left-[-20px]">Outside Dhaka</span>
-
-                                </label>
-                                <span>৳120</span>
-                            </div>
                         </div>
 
                     </div>
                     <div class="mt-6">
-                        <button type="{{env('APP_SMS_STATUS') ? 'button' : 'submit'}}" class="text-center border-2 text-white bg-[#048a00] rounded-md hind-siliguri-semibold px-6 py-3 text-base font-medium shadow-sm block w-full place_order_btn {{env('APP_SMS_STATUS') ? 'order_button' : ''}}">
+                        <button type="{{env('APP_SMS_STATUS') ? 'button' : 'submit'}}" class="text-center  border-2   text-white bg-[#048a00] rounded-md hind-siliguri-semibold px-6 py-3 text-base font-medium  shadow-sm block w-full place_order_btn {{env('APP_SMS_STATUS') ? 'order_button' : ''}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block">
                                 <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
                             </svg>
