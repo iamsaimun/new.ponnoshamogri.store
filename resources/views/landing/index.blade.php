@@ -172,29 +172,30 @@ $fb_contents[] = [
     });
 
     $(document).on('change', '.change_area', function() {
-        let shipping_charge = $(this).data('shipping-charge') || 0;
-        calculateDelivery(shipping_charge);
+        calculateDelivery(this.value);
     });
 
-    function calculateDelivery(shipping_charge) {
-        let sub_total = Number($('.product_price').text()) || 0;
-        let delivery_charge = Number(shipping_charge) || 0;
+    function calculateDelivery(area) {
+        let sub_total = Number($('.product_price').text());
+        let total = 0;
 
-        $('.delivery_charge_inpout').val(delivery_charge);
-        $('.shipping_price').text(delivery_charge);
+        if (area == 'Inside Dhaka') {
+            let delivery_charge = 0;
+            $('.delivery_charge_inpout').val(delivery_charge);
+            $('.shipping_price').text(delivery_charge);
+            total = sub_total + delivery_charge;
+        }
+        if (area == 'Outside Dhaka') {
+            let delivery_charge = 0;
+            $('.delivery_charge_inpout').val(delivery_charge);
+            $('.shipping_price').text(delivery_charge);
+            total = sub_total + delivery_charge;
+        }
 
-        let total = sub_total + delivery_charge;
         $('.grand_total').text(total);
     }
     $(document).ready(function() {
-        // Initialize with the checked radio button's shipping charge
-        let checkedRadio = $('.change_area:checked');
-        if (checkedRadio.length > 0) {
-            let shipping_charge = checkedRadio.data('shipping-charge') || 70;
-            calculateDelivery(shipping_charge);
-        } else {
-            calculateDelivery(70); // Default to Inside Dhaka charge
-        }
+        calculateDelivery('Inside Dhaka');
     });
 </script>
 @endsection
