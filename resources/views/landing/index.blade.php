@@ -65,8 +65,7 @@ $fb_contents[] = [
                 content_type: 'product',
                 content_ids: @json([$products_inventory[0]['product_data']['id']]),
                 contents: @json($fb_contents),
-                value: '{{ $products_inventory[0]['product_data ']['
-                sale_price '] }}'
+                value: '{{ $products_inventory[0]['product_data']['sale_price'] }}'
             },
             success: function(response) {},
             error: function() {}
