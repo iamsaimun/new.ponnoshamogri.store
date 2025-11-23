@@ -81,7 +81,7 @@
                     </div>
 
 
-                    <div class="mb-4">
+                    {{--<div class="mb-4">
                         <label class="block text-text_color text-lg mb-2">Shipping </label>
                         <div class="border rounded-md  border-[#048a00] mb-2">
                             <div class="area  flex justify-between items-center mr-3  ">
@@ -89,12 +89,11 @@
                                     <input checked type="radio" name="change_area" class=" opacity-0 change_area information_field" value="Inside Dhaka"> <span class="relative left-[-20px]">ডেলিভারি চার্জ ফ্রি</span>
 
                                 </label>
-                                {{-- <span>0</span> --}}
                             </div>
 
                         </div>
 
-                    </div>
+                    </div>--}}
                     <div class="mt-6">
                         <button type="{{env('APP_SMS_STATUS') ? 'button' : 'submit'}}" class="text-center  border-2   text-white bg-[#048a00] rounded-md hind-siliguri-semibold px-6 py-3 text-base font-medium  shadow-sm block w-full place_order_btn {{env('APP_SMS_STATUS') ? 'order_button' : ''}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block">
